@@ -2,13 +2,19 @@
 
 Given the `head`of a singly linked list and two integers `left`and `right`where `left <= right`, reverse the nodes of the list from position `left` to position `right`, and return *the reversed list*.
 
-![Untitled](92%20Reverse%20Linked%20List%20II%20697707ce582647a791896b36a3da259f/Untitled.png)
-
  Link: [https://leetcode.com/problems/reverse-linked-list-ii/](https://leetcode.com/problems/reverse-linked-list-ii/)
+
+**Medium**
+
+![Untitled](92%20Reverse%20Linked%20List%20II%204fe486db26d44055bf901179fdf58709/Untitled.png)
 
 由于recursion的空间复杂度为O(n) 所以本题使用iteration 效率更高 
 
 首先根据提供的left和right在链表中找到对应的位置（corner case: head为空或者只有一个元素返回head）然后记录起始元素的前一个node 因为该node需要在最后连接到反转之后的sublist的head 起始node为反转之后的tail 也需要记录下来 然后开始反转链表 使用常规的迭代方法 反转的次数可以通过n来控制 因为需要反转到最后一个node 反转结束后prev指向sublist的head cur指向sublist后的第一个元素 所以需要反转 m-n+1个node
+
+> **Time O(n)
+Space O(1)**
+> 
 
 ```java
 public ListNode reverseBetween(ListNode head, int left, int right) {
